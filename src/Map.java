@@ -8,6 +8,19 @@ public class Map {
 
     public Map(String DBName, String ip, int port) throws ClassNotFoundException, IllegalAccessException, InstantiationException, SQLException {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
+        // создает экземляр класса (Driver) и регестрирует статическим блоком(выполняется автоматически),
+        // который будет загружен из файла/сайта/из драйвера
+
+       /** ВОЗМОЖНОСТЬ МОДИФИКАЦИИИ КЛАССА БЕЗ ИСХОДНОГО КОДА И ДИНАМИЧЕСКИ ИМЕНЯТЬ КЛАСС ВО ВРЕМЯ ВЫПОЛНЕНИЯ КОМАНДЫ
+        * static {
+        try {
+            java.sql.DriverManager.registerDriver(new Driver());
+        } catch (SQLException e) {
+            throw new RuntimeException("Can't register driver!");
+            }
+        }*/
+
+
         String url = "jdbc:mysql://" + ip + ":" + port + "/" + DBName;
         con = DriverManager.getConnection(url, "root", "92e3579a");
         stmt = con.createStatement();
@@ -18,7 +31,7 @@ public class Map {
     }
 
     public boolean addCountry(int id, String name) {
-        String sql = "INSERT INTO COUNTRIES (ID_CO, NAME)" + "VALUES (" + id + ", ' " + name + " ')";
+        String sql = "INSERT INTO COUNTRIES (ID_CO, NAME)" + "  VALUES (" + id + ", ' " + name + " ')";
 
 
         try {
@@ -56,7 +69,7 @@ public class Map {
     public void showCountries() {
         String sql = "SELECT ID_CO, NAME FROM COUNTRIES";
         try {
-            ResultSet rs = stmt.executeQuery(sql);
+            ResultSet rs = stmt.executeQuery(sql); //множество результатов из бд
             System.out.println("COUNTRY LIST:");
             while (rs.next()) {
                 int id = rs.getInt("ID_CO");
@@ -75,7 +88,7 @@ public class Map {
     public static void main(String[] args) throws Exception {
         Map m = new Map("map", "localhost", 3306);
         m.showCountries();
-        m.addCountry(1, "RUSSIA");
+        m.addCountry(11, "USA");
         m.addCountry(5, "JAPAN");
         m.addCountry(6, "UKRAINE");
         m.deleteCountry(3);
