@@ -1,0 +1,22 @@
+SELECT * FROM movie JOIN cast ON cast.movie_id = movie.movie_id HAVING cast.actor_id = 1;
+//выборка фильмов , где снимался один и тот же актер ( с id = 1)
+
+SELECT * FROM actor JOIN cast ON actor.actor_id = cast.actor_id WHERE cast.movie_id = 1;
+//выборка актеров, которые снимались в одном фильме ( c id = 1)
+
+SELECT * FROM movie WHERE movie.year BETWEEN 2005 AND 2015;
+//выборка фильмов, снятых между 2010 и 2015 годами
+
+
+//удалить все фильмы , дата выхода которых была более заданого числа лет назад
+DELETE FROM movie WHERE year < 2000;
+
+
+//инф по актерах, которые были режисерами хотябы одного из фильмов
+
+
+SELECT * FROM actor JOIN producer ON actor.name = producer.name;
+//актеры-режисеры
+
+
+
