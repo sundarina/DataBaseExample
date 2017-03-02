@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e556999e-749f-46c7-8894-f8849b98eedd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysql-connector-java-5.1.40-bin.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Products/Product.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Products/ProductDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Products/ProductInfoClient.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj01/CLine.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj01/CPoint.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj01/CcoloredLine.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj01/CcoloredPoint.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj01/ColorAble.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj01/ColorTriangle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj01/Figure.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj01/MainFigures.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../prj01/TriangleClass.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DataBaseExample/HomeVideo.class" afterPath="$PROJECT_DIR$/out/production/DataBaseExample/HomeVideo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DataBaseExample/MainDBExample.class" afterPath="$PROJECT_DIR$/out/production/DataBaseExample/MainDBExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_40_bin.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_40_bin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XMLExample" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DataBaseExample/Products/Product.class" afterPath="$PROJECT_DIR$/out/production/DataBaseExample/Products/Product.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DataBaseExample/Products/ProductDAO.class" afterPath="$PROJECT_DIR$/out/production/DataBaseExample/Products/ProductDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HomeVideo.java" afterPath="$PROJECT_DIR$/src/HomeVideo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainDBExample.java" afterPath="$PROJECT_DIR$/src/MainDBExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Products/Product.java" afterPath="$PROJECT_DIR$/src/Products/Product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Products/ProductDAO.java" afterPath="$PROJECT_DIR$/src/Products/ProductDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Products/ProductInfoClient.java" afterPath="$PROJECT_DIR$/src/Products/ProductInfoClient.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,118 +24,65 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="file.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/libraries/res/file.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainDBExample.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainDBExample.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeVideo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/HomeVideo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="21" />
-              <folding>
-                <marker date="1488294683517" expanded="true" signature="729:854" ph=" INSERT statement (MOVIE)" />
-                <marker date="1488294683517" expanded="true" signature="1319:1380" ph=" DELETE statement (MOVIE)" />
-                <marker date="1488294683517" expanded="true" signature="2127:2162" ph=" DELETE statement (MOVIE)" />
-                <marker date="1488294683517" expanded="true" signature="2801:2833" ph=" SELECT statement (MOVIE)" />
-                <marker date="1488294683517" expanded="true" signature="3528:3684" ph=" INSERT statement (ACTOR)" />
-                <marker date="1488294683517" expanded="true" signature="4222:4387" ph=" INSERT statement (PRODUCER)" />
-                <marker date="1488294683517" expanded="true" signature="4863:4898" ph=" DELETE statement (ACTOR)" />
-                <marker date="1488294683517" expanded="true" signature="5550:5591" ph=" DELETE statement (PRODUCER)" />
-                <marker date="1488294683517" expanded="true" signature="6236:6277" ph=" SELECT statement (ACTOR)" />
-                <marker date="1488294683517" expanded="true" signature="6976:7023" ph=" SELECT statement (PRODUCER)" />
-                <marker date="1488294683517" expanded="true" signature="7742:7829" ph=" SELECT statement (MOVIE)" />
-                <marker date="1488294683517" expanded="true" signature="7867:7928" ph=" SELECT statement (ACTOR)" />
-                <marker date="1488294683517" expanded="true" signature="8900:8986" ph=" SELECT statement (ACTOR)" />
-                <marker date="1488294683517" expanded="true" signature="9023:9069" ph=" SELECT statement (MOVIE)" />
-                <marker date="1488294683517" expanded="true" signature="9998:10061" ph=" SELECT statement (PRODUCER, ACTOR)" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Products/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-234">
-              <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-              <folding>
-                <element signature="e#421#422#0" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
-                <element signature="e#478#479#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-                <element signature="e#543#544#0" expanded="true" />
-                <element signature="e#577#578#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
-                <element signature="e#770#771#0" expanded="true" />
-                <element signature="e#802#803#0" expanded="true" />
-                <element signature="e#833#834#0" expanded="true" />
-                <element signature="e#864#865#0" expanded="true" />
-                <element signature="e#908#909#0" expanded="true" />
-                <element signature="e#948#949#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="108">
+              <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Products/ProductDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="174" column="35" lean-forward="true" selection-start-line="174" selection-start-column="35" selection-end-line="174" selection-end-column="35" />
+            <state relative-caret-position="-1258">
+              <caret line="260" column="13" lean-forward="true" selection-start-line="260" selection-start-column="13" selection-end-line="260" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1131#1140#0" expanded="true" />
-                <element signature="e#2249#2258#0" expanded="true" />
-                <marker date="1488308725862" expanded="true" signature="1412:1435" ph=" SELECT statement (PRODUCTS)" />
-                <marker date="1488308725862" expanded="true" signature="2512:2631" ph=" SELECT statement (PRODUCTS)" />
-                <marker date="1488308725862" expanded="true" signature="4169:4301" ph=" INSERT statement (PRODUCTS)" />
-                <marker date="1488308725862" expanded="true" signature="5268:5396" ph=" UPDATE statement (PRODUCTS)" />
-                <marker date="1488308725862" expanded="true" signature="5698:5825" ph=" UPDATE statement (BOOKING)" />
-                <marker date="1488308725862" expanded="true" signature="6778:6840" ph=" DELETE statement (PRODUCTS)" />
+                <element signature="e#795#804#0" expanded="true" />
+                <element signature="e#1913#1922#0" expanded="true" />
+                <element signature="e#3572#3581#0" expanded="true" />
+                <marker date="1488470133124" expanded="true" signature="1076:1099" ph=" SELECT statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="2176:2295" ph=" SELECT statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="3836:3954" ph=" SELECT statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="5495:5627" ph=" INSERT statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="6610:6738" ph=" UPDATE statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="6995:7126" ph=" UPDATE statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="7141:7270" ph=" INSERT statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="7575:7604" ph=" SELECT statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="7671:7699" ph=" SELECT statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="8683:8712" ph=" UPDATE statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="8683:8726" ph=" UPDATE statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="8683:8741" ph=" UPDATE statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="8683:8743" ph=" UPDATE statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="8863:8891" ph=" UPDATE statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="8863:8895" ph=" UPDATE statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="8863:8916" ph=" UPDATE statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="8863:8918" ph=" UPDATE statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="9727:9789" ph=" DELETE statement (PRODUCTS)" />
+                <marker date="1488470133124" expanded="true" signature="10599:10627" ph=" SELECT statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="10791:10821" ph=" DELETE statement (BOOKING)" />
+                <marker date="1488470133124" expanded="true" signature="11568:11596" ph=" SELECT statement (BOOKING)" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductInfoClient.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductInfoClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Products/ProductInfoClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2646">
-              <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+            <state relative-caret-position="416">
+              <caret line="261" column="47" lean-forward="false" selection-start-line="261" selection-start-column="47" selection-end-line="261" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1477#1478#0" expanded="true" />
-                <element signature="e#1516#1517#0" expanded="true" />
-                <element signature="e#2384#2385#0" expanded="true" />
-                <element signature="e#2433#2434#0" expanded="true" />
-                <element signature="e#2558#2559#0" expanded="true" />
-                <element signature="e#2602#2603#0" expanded="true" />
-                <element signature="e#2730#2731#0" expanded="true" />
-                <element signature="e#2777#2778#0" expanded="true" />
-                <element signature="e#2905#2906#0" expanded="true" />
-                <element signature="e#2952#2953#0" expanded="true" />
-                <element signature="e#3079#3080#0" expanded="true" />
-                <element signature="e#3129#3130#0" expanded="true" />
+                <element signature="e#1802#1803#0" expanded="true" />
+                <element signature="e#1841#1842#0" expanded="true" />
+                <element signature="e#3083#3084#0" expanded="true" />
+                <element signature="e#3131#3132#0" expanded="true" />
+                <element signature="e#3647#3648#0" expanded="true" />
+                <element signature="e#3690#3691#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,16 +113,16 @@
         <option value="$PROJECT_DIR$/src/MainDBExample.java" />
         <option value="$PROJECT_DIR$/src/HomeVideo.java" />
         <option value="$PROJECT_DIR$/src/Products/Product.java" />
-        <option value="$PROJECT_DIR$/src/Products/ProductInfoClient.java" />
         <option value="$PROJECT_DIR$/src/Products/ProductDAO.java" />
+        <option value="$PROJECT_DIR$/src/Products/ProductInfoClient.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="24" />
-    <option name="width" value="1368" />
-    <option name="height" value="745" />
+    <option name="x" value="-62" />
+    <option name="y" value="136" />
+    <option name="width" value="1914" />
+    <option name="height" value="1051" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -206,8 +140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -254,6 +186,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -558,39 +492,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1368" height="745" extended-state="6" />
+    <frame x="-62" y="136" width="1914" height="1051" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.7151515" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19131833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18394649" sideWeight="0.11212121" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26769912" sideWeight="0.115755625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26769912" sideWeight="0.8842444" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25884244" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.7151515" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2651515" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18394649" sideWeight="0.8878788" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2590909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39933628" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -599,7 +533,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26769912" sideWeight="0.115755625" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -608,18 +542,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08271078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39933628" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.7151515" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19131833" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.4969697" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33883387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.255603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26769912" sideWeight="0.8842444" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25884244" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -630,7 +564,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -639,6 +573,88 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/res/file.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainDBExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HomeVideo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Products/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Products/ProductDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#795#804#0" expanded="true" />
+            <element signature="e#1913#1922#0" expanded="true" />
+            <element signature="e#3572#3581#0" expanded="true" />
+            <marker date="1488470133124" expanded="true" signature="1076:1099" ph=" SELECT statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="2176:2295" ph=" SELECT statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="3836:3954" ph=" SELECT statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="5495:5627" ph=" INSERT statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="6610:6738" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="6995:7126" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="7141:7270" ph=" INSERT statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="7575:7604" ph=" SELECT statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="7671:7699" ph=" SELECT statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="8683:8712" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="8683:8726" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="8683:8741" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="8683:8743" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="8863:8891" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="8863:8895" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="8863:8916" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="8863:8918" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="9727:9789" ph=" DELETE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="10599:10627" ph=" SELECT statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="10791:10821" ph=" DELETE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="11568:11596" ph=" SELECT statement (BOOKING)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Products/ProductInfoClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1802#1803#0" expanded="true" />
+            <element signature="e#1841#1842#0" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
+            <element signature="e#3131#3132#0" expanded="true" />
+            <element signature="e#3647#3648#0" expanded="true" />
+            <element signature="e#3690#3691#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/res/file.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -659,23 +675,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1044">
           <caret line="58" column="13" lean-forward="true" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
-          <folding>
-            <marker date="1488294683517" expanded="true" signature="729:854" ph=" INSERT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="1319:1380" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2127:2162" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2801:2833" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="3528:3684" ph=" INSERT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="4222:4387" ph=" INSERT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="4863:4898" ph=" DELETE statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="5550:5591" ph=" DELETE statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="6236:6277" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="6976:7023" ph=" SELECT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="7742:7829" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="7867:7928" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="8900:8986" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="9023:9069" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="9998:10061" ph=" SELECT statement (PRODUCER, ACTOR)" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -699,23 +699,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1488294683517" expanded="true" signature="729:854" ph=" INSERT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="1319:1380" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2127:2162" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2801:2833" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="3528:3684" ph=" INSERT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="4222:4387" ph=" INSERT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="4863:4898" ph=" DELETE statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="5550:5591" ph=" DELETE statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="6236:6277" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="6976:7023" ph=" SELECT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="7742:7829" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="7867:7928" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="8900:8986" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="9023:9069" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="9998:10061" ph=" SELECT statement (PRODUCER, ACTOR)" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -747,23 +731,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="140" lean-forward="false" selection-start-line="20" selection-start-column="140" selection-end-line="20" selection-end-column="140" />
-          <folding>
-            <marker date="1488294683517" expanded="true" signature="729:854" ph=" INSERT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="1319:1380" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2127:2162" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2801:2833" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="3528:3684" ph=" INSERT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="4222:4387" ph=" INSERT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="4863:4898" ph=" DELETE statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="5550:5591" ph=" DELETE statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="6236:6277" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="6976:7023" ph=" SELECT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="7742:7829" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="7867:7928" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="8900:8986" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="9023:9069" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="9998:10061" ph=" SELECT statement (PRODUCER, ACTOR)" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -787,23 +755,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1488294683517" expanded="true" signature="729:854" ph=" INSERT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="1319:1380" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2127:2162" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2801:2833" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="3528:3684" ph=" INSERT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="4222:4387" ph=" INSERT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="4863:4898" ph=" DELETE statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="5550:5591" ph=" DELETE statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="6236:6277" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="6976:7023" ph=" SELECT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="7742:7829" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="7867:7928" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="8900:8986" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="9023:9069" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="9998:10061" ph=" SELECT statement (PRODUCER, ACTOR)" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -875,91 +827,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Products/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/sql/ResultSet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="159" column="14" lean-forward="false" selection-start-line="159" selection-start-column="8" selection-end-line="159" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/HomeVideo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="21" />
+        <state relative-caret-position="396">
+          <caret line="85" column="13" lean-forward="true" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Products/ProductDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1258">
+          <caret line="260" column="13" lean-forward="true" selection-start-line="260" selection-start-column="13" selection-end-line="260" selection-end-column="13" />
           <folding>
-            <marker date="1488294683517" expanded="true" signature="729:854" ph=" INSERT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="1319:1380" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2127:2162" ph=" DELETE statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="2801:2833" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="3528:3684" ph=" INSERT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="4222:4387" ph=" INSERT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="4863:4898" ph=" DELETE statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="5550:5591" ph=" DELETE statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="6236:6277" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="6976:7023" ph=" SELECT statement (PRODUCER)" />
-            <marker date="1488294683517" expanded="true" signature="7742:7829" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="7867:7928" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="8900:8986" ph=" SELECT statement (ACTOR)" />
-            <marker date="1488294683517" expanded="true" signature="9023:9069" ph=" SELECT statement (MOVIE)" />
-            <marker date="1488294683517" expanded="true" signature="9998:10061" ph=" SELECT statement (PRODUCER, ACTOR)" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#795#804#0" expanded="true" />
+            <element signature="e#1913#1922#0" expanded="true" />
+            <element signature="e#3572#3581#0" expanded="true" />
+            <marker date="1488470133124" expanded="true" signature="1076:1099" ph=" SELECT statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="2176:2295" ph=" SELECT statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="3836:3954" ph=" SELECT statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="5495:5627" ph=" INSERT statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="6610:6738" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="6995:7126" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="7141:7270" ph=" INSERT statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="7575:7604" ph=" SELECT statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="7671:7699" ph=" SELECT statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="8683:8712" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="8683:8726" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="8683:8741" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="8683:8743" ph=" UPDATE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="8863:8891" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="8863:8895" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="8863:8916" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="8863:8918" ph=" UPDATE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="9727:9789" ph=" DELETE statement (PRODUCTS)" />
+            <marker date="1488470133124" expanded="true" signature="10599:10627" ph=" SELECT statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="10791:10821" ph=" DELETE statement (BOOKING)" />
+            <marker date="1488470133124" expanded="true" signature="11568:11596" ph=" SELECT statement (BOOKING)" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Products/ProductInfoClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2646">
-          <caret line="51" column="32" lean-forward="true" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+        <state relative-caret-position="416">
+          <caret line="261" column="47" lean-forward="false" selection-start-line="261" selection-start-column="47" selection-end-line="261" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1477#1478#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#2384#2385#0" expanded="true" />
-            <element signature="e#2433#2434#0" expanded="true" />
-            <element signature="e#2558#2559#0" expanded="true" />
-            <element signature="e#2602#2603#0" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-            <element signature="e#2777#2778#0" expanded="true" />
-            <element signature="e#2905#2906#0" expanded="true" />
-            <element signature="e#2952#2953#0" expanded="true" />
-            <element signature="e#3079#3080#0" expanded="true" />
-            <element signature="e#3129#3130#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Products/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding>
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#833#834#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#908#909#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Products/ProductDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="174" column="35" lean-forward="true" selection-start-line="174" selection-start-column="35" selection-end-line="174" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1131#1140#0" expanded="true" />
-            <element signature="e#2249#2258#0" expanded="true" />
-            <marker date="1488308725862" expanded="true" signature="1412:1435" ph=" SELECT statement (PRODUCTS)" />
-            <marker date="1488308725862" expanded="true" signature="2512:2631" ph=" SELECT statement (PRODUCTS)" />
-            <marker date="1488308725862" expanded="true" signature="4169:4301" ph=" INSERT statement (PRODUCTS)" />
-            <marker date="1488308725862" expanded="true" signature="5268:5396" ph=" UPDATE statement (PRODUCTS)" />
-            <marker date="1488308725862" expanded="true" signature="5698:5825" ph=" UPDATE statement (BOOKING)" />
-            <marker date="1488308725862" expanded="true" signature="6778:6840" ph=" DELETE statement (PRODUCTS)" />
+            <element signature="e#1802#1803#0" expanded="true" />
+            <element signature="e#1841#1842#0" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
+            <element signature="e#3131#3132#0" expanded="true" />
+            <element signature="e#3647#3648#0" expanded="true" />
+            <element signature="e#3690#3691#0" expanded="true" />
           </folding>
         </state>
       </provider>

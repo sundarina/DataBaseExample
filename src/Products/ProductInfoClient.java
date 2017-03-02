@@ -4,21 +4,14 @@ package Products;
  * Created by sun on 28.02.17.
  */
 
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 public class ProductInfoClient extends JDialog {
-    /**
-     *
-     */
+
     private static final long serialVersionUID = 1L;
     // Создаем DAO-объект
     ProductDAO productDAO = new ProductDAO();
@@ -39,8 +32,19 @@ public class ProductInfoClient extends JDialog {
 
     private JButton btnClear = new JButton("Очистить");
     private JButton btnAdd = new JButton("Добавить");
-    private JButton btnUpdate = new JButton("Обновить");
+    private JButton btnBook = new JButton("Добавить в заказ: ");
     private JButton btnRemove = new JButton("Удалить");
+    private JButton btnShowOrder = new JButton("Сформировать заказ");
+
+    private JLabel labelOrd = new JLabel("Заказ №: ");
+    private JLabel labelTxt = new JLabel("Cписок продуктов: ");
+    private JLabel labelSum = new JLabel("Общая сумма покупки: ");
+
+    private JTextField orderId = new JTextField((int) (Math.random() * 100) + "");
+
+    private JTextArea textArea = new JTextArea();
+    private JTextField textField = new JTextField();
+    private JButton bntXML = new JButton("Распечатать");
 
 
     /**
@@ -58,7 +62,7 @@ public class ProductInfoClient extends JDialog {
     public ProductInfoClient() {
         this.setTitle("Информация о товарах");
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        this.setLayout(new GridLayout(8, 2));
+        this.setLayout(new GridLayout(9, 2));
         this.setBounds(100, 50, 400, 200);
 // Добавление элементов управления в диалог
         this.add(lbSelectId);
@@ -72,9 +76,10 @@ public class ProductInfoClient extends JDialog {
         this.add(lbQuantity);
         this.add(txtQuantity);
         this.add(btnAdd);
-        this.add(btnUpdate);
+        this.add(btnBook);
         this.add(btnRemove);
         this.add(btnClear);
+        this.add(btnShowOrder);
 // Описание обработчиков событий
         comboId.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -86,9 +91,9 @@ public class ProductInfoClient extends JDialog {
                 addProduct();
             }
         });
-        btnUpdate.addActionListener(new ActionListener() {
+        btnBook.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                updateProduct();
+                sendingProduct();
             }
         });
         btnRemove.addActionListener(new ActionListener() {
@@ -99,6 +104,13 @@ public class ProductInfoClient extends JDialog {
         btnClear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 clearProductInfo();
+            }
+        });
+
+        btnShowOrder.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                showOrder();
             }
         });
 // Обновляем список идентификаторов товаров
@@ -185,8 +197,11 @@ public class ProductInfoClient extends JDialog {
      * Обновляет информацию о товаре на основе
      * данных текстовых полей
      */
-    protected void updateProduct() {
+    protected void sendingProduct() {
         try {
+
+            productDAO.clearBooking(); // почему не чистит
+
 // формируем объект-товар
 // на основе данных диалога
             Product product = new Product(
@@ -232,5 +247,48 @@ public class ProductInfoClient extends JDialog {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
+    }
+
+    protected void showOrder() {
+        JFrame frame = new JFrame();
+        frame.setTitle("Ваш заказ");
+        frame.setBounds(100, 50, 400, 200);
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(5, 2));
+
+        frame.add(panel);
+        panel.add(labelOrd);
+        panel.add(orderId);
+        panel.add(new Label("**************    "));
+        panel.add(new Label("**************"));
+        panel.add(labelTxt);
+        panel.add(textArea);
+        panel.add(labelSum);
+        panel.add(textField);
+        panel.add(bntXML);
+        String str = "";
+        int sum = 0;
+        try {
+
+            for (int j = 1; j < productDAO.countRowBooking() + 1; j++) {
+                List<Product> product =
+                        productDAO.getBookingProductById(j);
+
+                for (int i = 0; i < product.size(); i++) {
+                    str += String.valueOf(product.get(i).getDescription() + ", " + product.get(i).getQuantity() + "шт" + "\n"); //как добавить строки все вместе
+
+                    sum += product.get(i).getQuantity() * product.get(i).getRate();
+                }
+            }
+            textArea.setText(str);
+            textField.setText(String.valueOf(sum));
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
     }
 }

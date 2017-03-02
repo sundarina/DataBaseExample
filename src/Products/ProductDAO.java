@@ -15,19 +15,11 @@ public class ProductDAO { //from
         // Подгрузка драйвера БД Derby
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         // Получение соединения с БД
-        String url = "jdbc:mysql://localhost:3306/products";
+        String url = "jdbc:mysql://localhost:3306/products?autoReconnect=true&useSSL=false";
         return DriverManager.getConnection(
                 url, "root", "92e3579a");
     }
 
-//    private Connection getConnectionTo () throws Exception {
-//        // Подгрузка драйвера БД Derby
-//        Class.forName("com.mysql.jdbc.Driver").newInstance();
-//        // Получение соединения с БД
-//        String url = "jdbc:mysql://localhost:3306/products";
-//        return DriverManager.getConnection(
-//                url, "root", "92e3579a");
-//    }
     /**
      * Возвращает список идентификаторов товаров
      *
@@ -96,7 +88,7 @@ public class ProductDAO { //from
                 // и помещаем его в коллекцию
                 product = new Product(
                         id,
-                        rs.getString(1), //вытягиваем с перво колонки
+                        rs.getString(1), //вытягиваем с первой колонки
                         rs.getFloat(2), //второй колонки
                         rs.getInt(3)); //третьей
                 products.add(product);
@@ -114,6 +106,54 @@ public class ProductDAO { //from
 
         return products;
     }
+
+
+    public List<Product> getBookingProductById(int id) throws Exception {
+        List<Product> products = new ArrayList<Product>();
+
+        // Получение соединения с БД
+        Connection con = getConnectionFrom();
+        con.setAutoCommit(false);
+        ResultSet rs = null;
+        // Подготовка SQL-запроса
+        PreparedStatement st = con.prepareStatement(
+                "Select description, rate, quantity " +
+                        "From booking " +
+                        "Where id = ?");
+        // Указание значений параметров запроса
+        st.setInt(1, id); //вместо ? вставляем по порядковому номеру начина с 1 нужный индекс
+
+        try {
+            // Выполнение запроса
+            rs = st.executeQuery();
+            Product product = null;
+            con.commit();
+            // Перечисляем результаты выборки
+            while (rs.next()) {
+                // Из каждой строки выборки выбираем результаты,// формируем новый объект Product
+                // и помещаем его в коллекцию
+                product = new Product(
+                        id,
+                        rs.getString(1), //вытягиваем с первой колонки
+                        rs.getFloat(2), //второй колонки
+                        rs.getInt(3)); //третьей
+
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            System.err.println("SQLState: " + e.getSQLState()
+
+                    + "Error Message: " + e.getMessage());
+            con.rollback();
+        } finally {
+            rs.close();
+            con.close();
+        }
+        // Закрываем выборку и соединение с БД
+
+        return products;
+    }
+
 
     /**
      * Добавляет новый товар
@@ -157,45 +197,91 @@ public class ProductDAO { //from
      * @throws Exception
      */
     public void setProduct(Product product) throws Exception {
-        // Получение соединения с БД
+
+        final int count = 1;
+        int resultFrom = 0;
+
+        int resultTo = 0;
+
         Connection con = getConnectionFrom();
         con.setAutoCommit(false);
-        // Подготовка SQL-запроса
+
         PreparedStatement st = con.prepareStatement(
                 "Update products " +
                         "Set description = ?, rate = ?, quantity = ? " +
                         "Where id=?");
-        // Указание значений параметров запроса
+
         st.setString(1, product.getDescription());
         st.setFloat(2, product.getRate());
         st.setInt(3, product.getQuantity());
         st.setInt(4, product.getId());
 
-        PreparedStatement stB = con.prepareStatement(
-                "Update booking " +
-                        "Set description = ?, rate=  ?, quantity = ? " +
-                        "Where id=?");
-        // Указание значений параметров запроса
-        stB.setString(1, product.getDescription());
-        stB.setFloat(2, product.getRate());
-        stB.setInt(3, product.getQuantity());
-        stB.setInt(4, product.getId());
+        PreparedStatement stB = con.prepareStatement
+//                ("Update booking " +
+//                        "Set description = ?, rate=  ?, quantity = ? " +
+//                        "Where id=?");
+
+        ("Insert into booking " +
+                "(id, description, rate, quantity, total_sum) " +
+                "values (?, ?, ?, ?, ?)");
+        stB.setInt(1, product.getId());
+        stB.setString(2, product.getDescription());
+        stB.setFloat(3, product.getRate());
+        stB.setInt(4, product.getQuantity());
+        stB.setFloat(5, product.getRate() * count);
+
+
+        PreparedStatement stQuantityFrom = con.prepareStatement("Select quantity from products");
+        PreparedStatement stQuantityTo = con.prepareStatement("Select quantity from booking");
 
 
         //prepcon для заказов
         //кон для заказа
-
-
-        // Выполнение запроса
         try {
+
+//            if (sum<=0) {
+//                throw new NumberFormatException("less or equals ZERO");
+//            }
+
+
             st.executeUpdate();
             stB.executeUpdate();
+
+            ResultSet resFromProducts = stQuantityFrom.executeQuery();
+            ResultSet resToBooking = stQuantityTo.executeQuery();
+            int accountFrom = 0;
+            while (resFromProducts.next()) {
+                accountFrom = resFromProducts.getInt(1);
+            }
+
+            if (accountFrom >= count) {
+                resultFrom = accountFrom - count;
+            } else {
+                throw new SQLException("Invalid quantity");
+            }
+
+            int accountTo = 0;
+            while (resToBooking.next()) {
+                accountTo = resToBooking.getInt(1);
+            }
+            resultTo = accountTo + count;
+
+            PreparedStatement stFromUpdate = con.prepareStatement("Update products Set quantity=" + resultFrom + " Where id=?");
+            stFromUpdate.setInt(1, product.getId());
+            PreparedStatement stToUpdate = con.prepareStatement("Update booking Set quantity=" + count + " where id= ?");
+            stToUpdate.setInt(1, product.getId());
+            stFromUpdate.executeUpdate();
+            stToUpdate.executeUpdate();
+
             con.commit();
         } catch (SQLException e) {
             System.err.println("SQLState: " + e.getSQLState()
-
                     + "Error Message: " + e.getMessage());
             con.rollback();
+//        } catch (NumberFormatException e) {
+//            System.out.println("Invalid quantity: " + summa);
+//        }
+
         } finally {
             con.close();
         }
@@ -217,11 +303,69 @@ public class ProductDAO { //from
             con.commit();
         } catch (SQLException e) {
             System.err.println("SQLState: " + e.getSQLState()
-
                     + "Error Message: " + e.getMessage());
             con.rollback();
         } finally {
             con.close();
         }
     }
+
+    public void clearBooking() throws Exception { //как удалять все в заказе
+        Connection con = getConnectionFrom();
+        con.setAutoCommit(false);
+
+        con.setAutoCommit(false);
+        PreparedStatement clearBooking = null;
+        Statement statement = con.createStatement();
+
+        int rowCount = 0;
+        try {
+            ResultSet rs = statement.executeQuery("Select count(*) from booking");
+            while (rs.next()) {
+                rowCount = rs.getInt(1);
+            }
+            rs.close();
+            clearBooking = con.prepareStatement("DELETE FROM booking where id=?");
+            for (int i = 1; i <= rowCount; i++) {
+                clearBooking.setInt(1, i);
+                clearBooking.executeUpdate();
+                con.commit();
+            }
+        } catch (SQLException e) {
+            System.err.println("SQLState: " + e.getSQLState()
+                    + "Error Message: " + e.getMessage());
+            con.rollback();
+        } finally {
+
+            con.close();
+        }
+    }
+
+    public int countRowBooking() throws Exception {
+        Connection con = getConnectionFrom();
+        con.setAutoCommit(false);
+
+        con.setAutoCommit(false);
+
+        Statement statement = con.createStatement();
+
+        int rowCount = 0;
+        try {
+            ResultSet rs = statement.executeQuery("Select count(*) from booking");
+            while (rs.next()) {
+                rowCount = rs.getInt(1);
+            }
+            rs.close();
+            con.commit();
+        } catch (SQLException e) {
+            System.err.println("SQLState: " + e.getSQLState()
+                    + "Error Message: " + e.getMessage());
+            con.rollback();
+        } finally {
+
+            con.close();
+        }
+        return rowCount;
+    }
+
 }
