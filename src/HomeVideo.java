@@ -270,6 +270,5 @@ public class HomeVideo {
                     "Error retrieving list");
             System.out.println("    >>>> " + e.getMessage());
         }
-
     }
 }

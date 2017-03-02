@@ -15,18 +15,20 @@ public class MainDBExample {
 //        m.stop();
 
         HomeVideo h = new HomeVideo("homevideo", "localhost", 3306);
-       // h.addMovie(5, "Dark Shadows", 2012, "USA");
+        h.addMovie(5, "Dark Shadows", 2012, "USA");
         h.addMovie(6, "Leon", 1994, "France");
-        h.deleteMovieWithDiapason(1900, 2000);
+      //  h.deleteMovieWithDiapason(1900, 2000);
       //  h.deleteMovie(6);
-       // h.showMovie();
+
         h.movieSameActor(1);
         h.addActor(6, "Amy" , "Adams", 1974, 8, 20);
         h.addProducer(6, "Zack", "Snyder", 1966, 5,1);
+        h.addProducer(7, "Luc", "Besson", 1959, 3,18);
         h.showActor();
         h.showProducer();
         h.actorSameMovie(1);
         h.actorProduser();
+        h.showMovie();
         h.stop();
     }
 }
