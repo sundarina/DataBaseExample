@@ -34,7 +34,7 @@ public class ProductDAO { //from
         // Выполнение SQL-запроса
         try {
             rs = con.createStatement().executeQuery(
-                    "Select id From products");
+                    "Select id From product");
             con.commit();
             while (rs.next()) {
                 // Из каждой строки выборки выбираем
@@ -72,7 +72,7 @@ public class ProductDAO { //from
         // Подготовка SQL-запроса
         PreparedStatement st = con.prepareStatement(
                 "Select description, rate, quantity " +
-                        "From products " +
+                        "From product " +
                         "Where id = ?");
         // Указание значений параметров запроса
         st.setInt(1, id); //вместо ? вставляем по порядковому номеру начина с 1 нужный индекс
@@ -167,7 +167,7 @@ public class ProductDAO { //from
         con.setAutoCommit(false);
         // Подготовка SQL-запроса
         PreparedStatement st = con.prepareStatement(
-                "Insert into products " +
+                "Insert into product " +
                         "(id, description, rate, quantity) " +
                         "values (?, ?, ?, ?)");
         // Указание значений параметров запроса
@@ -207,7 +207,7 @@ public class ProductDAO { //from
         con.setAutoCommit(false);
 
         PreparedStatement st = con.prepareStatement(
-                "Update products " +
+                "Update product " +
                         "Set description = ?, rate = ?, quantity = ? " +
                         "Where id=?");
 
@@ -231,24 +231,16 @@ public class ProductDAO { //from
         stB.setFloat(5, product.getRate() * count);
 
 
-        PreparedStatement stQuantityFrom = con.prepareStatement("Select quantity from products");
+        PreparedStatement stQuantityFrom = con.prepareStatement("Select quantity from product");
         PreparedStatement stQuantityTo = con.prepareStatement("Select quantity from booking");
 
-
-        //prepcon для заказов
-        //кон для заказа
         try {
-
-//            if (sum<=0) {
-//                throw new NumberFormatException("less or equals ZERO");
-//            }
-
-
             st.executeUpdate();
             stB.executeUpdate();
 
             ResultSet resFromProducts = stQuantityFrom.executeQuery();
             ResultSet resToBooking = stQuantityTo.executeQuery();
+
             int accountFrom = 0;
             while (resFromProducts.next()) {
                 accountFrom = resFromProducts.getInt(1);
@@ -266,10 +258,11 @@ public class ProductDAO { //from
             }
             resultTo = accountTo + count;
 
-            PreparedStatement stFromUpdate = con.prepareStatement("Update products Set quantity=" + resultFrom + " Where id=?");
+            PreparedStatement stFromUpdate = con.prepareStatement("Update product Set quantity=" + resultFrom + " Where id=?");
             stFromUpdate.setInt(1, product.getId());
             PreparedStatement stToUpdate = con.prepareStatement("Update booking Set quantity=" + count + " where id= ?");
             stToUpdate.setInt(1, product.getId());
+
             stFromUpdate.executeUpdate();
             stToUpdate.executeUpdate();
 
@@ -278,10 +271,6 @@ public class ProductDAO { //from
             System.err.println("SQLState: " + e.getSQLState()
                     + "Error Message: " + e.getMessage());
             con.rollback();
-//        } catch (NumberFormatException e) {
-//            System.out.println("Invalid quantity: " + summa);
-//        }
-
         } finally {
             con.close();
         }
@@ -293,7 +282,7 @@ public class ProductDAO { //from
         con.setAutoCommit(false);
         // Подготовка SQL-запроса
         PreparedStatement st = con.prepareStatement(
-                "Delete from products " +
+                "Delete from product " +
                         "Where id = ?");
         // Указание значений параметров запроса
         st.setInt(1, id);
@@ -310,33 +299,35 @@ public class ProductDAO { //from
         }
     }
 
-    public void clearBooking() throws Exception { //как удалять все в заказе
+    public void clearBooking() throws Exception {
         Connection con = getConnectionFrom();
         con.setAutoCommit(false);
-
-        con.setAutoCommit(false);
         PreparedStatement clearBooking = null;
-        Statement statement = con.createStatement();
+        //Statement statement = con.createStatement();
+      //  clearBooking = con.prepareStatement("DELETE FROM booking where id=?");
+        clearBooking = con.prepareStatement("DROP TABLE products.booking");
 
         int rowCount = 0;
         try {
-            ResultSet rs = statement.executeQuery("Select count(*) from booking");
-            while (rs.next()) {
-                rowCount = rs.getInt(1);
-            }
-            rs.close();
-            clearBooking = con.prepareStatement("DELETE FROM booking where id=?");
-            for (int i = 1; i <= rowCount; i++) {
-                clearBooking.setInt(1, i);
-                clearBooking.executeUpdate();
-                con.commit();
-            }
+           // ResultSet rs = statement.executeQuery("Select count(*) from booking");
+//
+//            while (rs.next()) {
+//                rowCount = rs.getInt(1);
+//            }
+//            rs.close();
+//
+//            for (int i = 1; i <= rowCount; i++) {
+//                clearBooking.setInt(1, i);
+//                clearBooking.executeUpdate();
+//                con.commit();
+
+            clearBooking.executeUpdate();
+            con.commit();
         } catch (SQLException e) {
             System.err.println("SQLState: " + e.getSQLState()
                     + "Error Message: " + e.getMessage());
             con.rollback();
         } finally {
-
             con.close();
         }
     }
@@ -366,6 +357,24 @@ public class ProductDAO { //from
             con.close();
         }
         return rowCount;
+    }
+
+    public void createBooking() throws Exception {
+        Connection con = getConnectionFrom();
+        con.setAutoCommit(false);
+        PreparedStatement createBooking = null;
+
+        try {
+            createBooking = con.prepareStatement("CREATE TABLE products.booking (id INT NOT NULL, description VARCHAR(100) NOT NULL, rate FLOAT NOT NULL, quantity INT NOT NULL, total_sum FLOAT NOT NULL, PRIMARY KEY (id))");
+            createBooking.executeUpdate();
+            con.commit();
+        } catch (SQLException e) {
+            System.err.println("SQLState: " + e.getSQLState()
+                    + "Error Message: " + e.getMessage());
+            con.rollback();
+        } finally {
+            con.close();
+        }
     }
 
 }

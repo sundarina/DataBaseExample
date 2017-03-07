@@ -46,6 +46,10 @@ public class ProductInfoClient extends JDialog {
     private JTextField textField = new JTextField();
     private JButton bntXML = new JButton("Распечатать");
 
+    JScrollPane scroll = new JScrollPane(textArea);
+
+
+    //Add Textarea in to middle panel
 
     /**
      * Создает экземпляр диалога
@@ -60,6 +64,18 @@ public class ProductInfoClient extends JDialog {
      * Конструктор диалога
      */
     public ProductInfoClient() {
+
+        try {
+            productDAO.clearBooking();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            productDAO.createBooking();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         this.setTitle("Информация о товарах");
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setLayout(new GridLayout(9, 2));
@@ -80,6 +96,7 @@ public class ProductInfoClient extends JDialog {
         this.add(btnRemove);
         this.add(btnClear);
         this.add(btnShowOrder);
+
 // Описание обработчиков событий
         comboId.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -200,16 +217,14 @@ public class ProductInfoClient extends JDialog {
     protected void sendingProduct() {
         try {
 
-            productDAO.clearBooking(); // почему не чистит
-
-// формируем объект-товар
-// на основе данных диалога
+            // формируем объект-товар
+            // на основе данных диалога
             Product product = new Product(
                     Integer.parseInt(txtId.getText()),
                     txtDescription.getText(),
                     Float.parseFloat(txtRate.getText()),
                     Integer.parseInt(txtQuantity.getText()));
-// обновляем данные о товаре в БД
+            // обновляем данные о товаре в БД
             productDAO.setProduct(product);
         } catch (Exception e) {
             e.printStackTrace();
@@ -250,6 +265,11 @@ public class ProductInfoClient extends JDialog {
     }
 
     protected void showOrder() {
+        JPanel p = new JPanel();
+        p.setLayout(new BorderLayout());
+
+        p.add(scroll);
+
         JFrame frame = new JFrame();
         frame.setTitle("Ваш заказ");
         frame.setBounds(100, 50, 400, 200);
@@ -259,14 +279,18 @@ public class ProductInfoClient extends JDialog {
         frame.add(panel);
         panel.add(labelOrd);
         panel.add(orderId);
-        panel.add(new Label("**************    "));
+        panel.add(new Label("**************   "));
         panel.add(new Label("**************"));
         panel.add(labelTxt);
-        panel.add(textArea);
+        panel.add(p);
         panel.add(labelSum);
         panel.add(textField);
         panel.add(bntXML);
+
+        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
         String str = "";
+
         int sum = 0;
         try {
 
@@ -274,9 +298,9 @@ public class ProductInfoClient extends JDialog {
                 List<Product> product =
                         productDAO.getBookingProductById(j);
 
-                for (int i = 0; i < product.size(); i++) {
-                    str += String.valueOf(product.get(i).getDescription() + ", " + product.get(i).getQuantity() + "шт" + "\n"); //как добавить строки все вместе
 
+                for (int i = 0; i < product.size(); i++) {
+                    str += String.valueOf(product.get(i).getDescription() + ", " + product.get(i).getQuantity() + "шт" + "\n");
                     sum += product.get(i).getQuantity() * product.get(i).getRate();
                 }
             }
