@@ -4,11 +4,18 @@ package Products;
  * Created by sun on 28.02.17.
  */
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class ProductInfoClient extends JDialog {
 
@@ -48,6 +55,10 @@ public class ProductInfoClient extends JDialog {
 
     JScrollPane scroll = new JScrollPane(textArea);
 
+    protected static final String EXTENSION = ".xml";
+
+    protected static final String FORMAT_NAME = "xml";
+
 
     //Add Textarea in to middle panel
 
@@ -57,7 +68,8 @@ public class ProductInfoClient extends JDialog {
      * @param args
      */
     public static void main(String[] args) {
-        new ProductInfoClient();
+
+        ProductInfoClient prdI = new ProductInfoClient();
     }
 
     /**
@@ -127,7 +139,11 @@ public class ProductInfoClient extends JDialog {
         btnShowOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                showOrder();
+                try {
+                    showOrder();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 // Обновляем список идентификаторов товаров
@@ -264,7 +280,7 @@ public class ProductInfoClient extends JDialog {
         }
     }
 
-    protected void showOrder() {
+    protected void showOrder() throws Exception {
         JPanel p = new JPanel();
         p.setLayout(new BorderLayout());
 
@@ -287,32 +303,59 @@ public class ProductInfoClient extends JDialog {
         panel.add(textField);
         panel.add(bntXML);
 
-        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        bntXML.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-        String str = "";
+                JFileChooser fc = new JFileChooser();
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("*.xml", "*.*");
+                fc.setFileFilter(filter);
 
-        int sum = 0;
-        try {
+                if (fc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    File file = fc.getSelectedFile();
+                    String fileName = null;
+                    try {
+                        fileName = file.getCanonicalPath();
+                        if (!fileName.endsWith(EXTENSION)) {
+                            file = new File(fileName + EXTENSION);
+                        }
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
 
-            for (int j = 1; j < productDAO.countRowBooking() + 1; j++) {
-                List<Product> product =
-                        productDAO.getBookingProductById(j);
-
-
-                for (int i = 0; i < product.size(); i++) {
-                    str += String.valueOf(product.get(i).getDescription() + ", " + product.get(i).getQuantity() + "шт" + "\n");
-                    sum += product.get(i).getQuantity() * product.get(i).getRate();
+                   // String fileName = "xml" + File.separator + "products.xml";
+                    XMLSave save = null;
+                    try {
+                        save = new XMLSave();
+                        save.saveToFile(fileName);
+                    } catch (Exception e1) {
+                        e1.printStackTrace();
+                    }
                 }
             }
-            textArea.setText(str);
-            textField.setText(String.valueOf(sum));
-        } catch (Exception e) {
+        });
+
+        String result = "";
+        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        try
+
+        {
+            List<Product> products = productDAO.showBookingProduct();
+
+            for (int i = 0; i < products.size(); i++) {
+                result += products.get(i).getDescription() + ", " + products.get(i).getQuantity() + "шт" + "\n";
+            }
+            textArea.setText(result);
+            textField.setText(productDAO.showBookingFinalCost() + "");
+        } catch (
+                Exception e)
+
+        {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-
     }
 }

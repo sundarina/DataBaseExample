@@ -155,6 +155,85 @@ public class ProductDAO { //from
     }
 
 
+    public List<Product> showBookingProduct() throws Exception {
+        List<Product> products = new ArrayList<Product>();
+        // Получение соединения с БД
+        Connection con = getConnectionFrom();
+        con.setAutoCommit(false);
+        ResultSet rs = null;
+        String result = "";
+        // Подготовка SQL-запроса
+        PreparedStatement st = con.prepareStatement(
+                "Select * " +
+                        "From booking");
+        try {
+            // Выполнение запроса
+            rs = st.executeQuery();
+            Product product = null;
+            con.commit();
+            // Перечисляем результаты выборки
+            while (rs.next()) {
+                // Из каждой строки выборки выбираем результаты,// формируем новый объект Product
+                // и помещаем его в коллекцию
+                product = new Product(
+                        rs.getInt(1),
+                        rs.getString(2), //вытягиваем с первой колонки
+                        rs.getFloat(3), //второй колонки
+                        rs.getInt(4)); //третьей
+
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            System.err.println("SQLState: " + e.getSQLState()
+
+                    + "Error Message: " + e.getMessage());
+            con.rollback();
+        } finally {
+            rs.close();
+            con.close();
+        }
+        // Закрываем выборку и соединение с БД
+
+        return products;
+    }
+
+    public int showBookingFinalCost() throws Exception {
+        List<Product> products = new ArrayList<Product>();
+        Connection con = getConnectionFrom();
+        con.setAutoCommit(false);
+        ResultSet rs = null;
+        int result = 0;
+        PreparedStatement st = con.prepareStatement(
+                "Select * " +
+                        "From booking");
+        try {
+            rs = st.executeQuery();
+            Product product = null;
+            con.commit();
+            while (rs.next()) {
+                product = new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getFloat(3),
+                        rs.getInt(4));
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            System.err.println("SQLState: " + e.getSQLState()
+                    + "Error Message: " + e.getMessage());
+            con.rollback();
+        } finally {
+            rs.close();
+            con.close();
+        }
+
+        for (int i = 0; i < products.size(); i++) {
+            result += products.get(i).getQuantity() * products.get(i).getRate();
+        }
+        return result;
+    }
+
+
     /**
      * Добавляет новый товар
      *

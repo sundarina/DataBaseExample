@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="WINDOWS-1251" standalone="no"?>
+<ProducBooking>
+    <Products Description="Milk" Quantity="1" Rate="7.0" id="Products.Product@61614aa5"/>
+    <Products Description="Fruit" Quantity="1" Rate="5.0" id="Products.Product@37267ad4"/>
+    <Products Description="Drink" Quantity="1" Rate="30.0" id="Products.Product@20cf82c6"/>
+    <Products Description="Bread" Quantity="1" Rate="2.0" id="Products.Product@2921278c"/>
+</ProducBooking>
