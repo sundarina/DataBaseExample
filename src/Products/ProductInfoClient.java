@@ -4,20 +4,18 @@ package Products;
  * Created by sun on 28.02.17.
  */
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class ProductInfoClient extends JDialog {
+public class ProductInfoClient extends JDialog implements  Runnable{
 
     private static final long serialVersionUID = 1L;
     // Создаем DAO-объект
@@ -72,10 +70,13 @@ public class ProductInfoClient extends JDialog {
         ProductInfoClient prdI = new ProductInfoClient();
     }
 
+
+
     /**
      * Конструктор диалога
      */
     public ProductInfoClient() {
+        Thread t = new Thread(this);
 
         try {
             productDAO.clearBooking();
@@ -91,8 +92,8 @@ public class ProductInfoClient extends JDialog {
         this.setTitle("Информация о товарах");
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setLayout(new GridLayout(9, 2));
-        this.setBounds(100, 50, 400, 200);
-// Добавление элементов управления в диалог
+        this.setBounds(100, 50, 400, 400);
+        // Добавление элементов управления в диалог
         this.add(lbSelectId);
         this.add(comboId);
         this.add(lbId);
@@ -139,11 +140,14 @@ public class ProductInfoClient extends JDialog {
         btnShowOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                try {
-                    showOrder();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    showOrder();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+
+                t.start();
+
             }
         });
 // Обновляем список идентификаторов товаров
@@ -288,7 +292,7 @@ public class ProductInfoClient extends JDialog {
 
         JFrame frame = new JFrame();
         frame.setTitle("Ваш заказ");
-        frame.setBounds(100, 50, 400, 200);
+        frame.setBounds(100, 50, 400, 400);
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(5, 2));
 
@@ -323,7 +327,6 @@ public class ProductInfoClient extends JDialog {
                         ex.printStackTrace();
                     }
 
-                   // String fileName = "xml" + File.separator + "products.xml";
                     XMLSave save = null;
                     try {
                         save = new XMLSave();
@@ -337,9 +340,7 @@ public class ProductInfoClient extends JDialog {
 
         String result = "";
         scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        try
-
-        {
+        try {
             List<Product> products = productDAO.showBookingProduct();
 
             for (int i = 0; i < products.size(); i++) {
@@ -347,15 +348,25 @@ public class ProductInfoClient extends JDialog {
             }
             textArea.setText(result);
             textField.setText(productDAO.showBookingFinalCost() + "");
-        } catch (
-                Exception e)
-
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
         frame.setVisible(true);
+    }
+
+    @Override
+    public void run() {
+        try {
+            showOrder();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

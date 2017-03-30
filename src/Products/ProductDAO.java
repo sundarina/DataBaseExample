@@ -309,10 +309,11 @@ public class ProductDAO { //from
         stB.setInt(4, product.getQuantity());
         stB.setFloat(5, product.getRate() * count);
 
-
-        PreparedStatement stQuantityFrom = con.prepareStatement("Select quantity from product");
-        PreparedStatement stQuantityTo = con.prepareStatement("Select quantity from booking");
-
+//добавила  " Where id=?" и  stQuantityFrom.setInt(1, product.getId());
+        PreparedStatement stQuantityFrom = con.prepareStatement("Select quantity from product" + " Where id=?");
+        stQuantityFrom.setInt(1, product.getId());
+        PreparedStatement stQuantityTo = con.prepareStatement("Select quantity from booking" + " Where id=?");
+        stQuantityTo.setInt(1, product.getId());
         try {
             st.executeUpdate();
             stB.executeUpdate();
@@ -383,12 +384,12 @@ public class ProductDAO { //from
         con.setAutoCommit(false);
         PreparedStatement clearBooking = null;
         //Statement statement = con.createStatement();
-      //  clearBooking = con.prepareStatement("DELETE FROM booking where id=?");
+        //  clearBooking = con.prepareStatement("DELETE FROM booking where id=?");
         clearBooking = con.prepareStatement("DROP TABLE products.booking");
 
         int rowCount = 0;
         try {
-           // ResultSet rs = statement.executeQuery("Select count(*) from booking");
+            // ResultSet rs = statement.executeQuery("Select count(*) from booking");
 //
 //            while (rs.next()) {
 //                rowCount = rs.getInt(1);
@@ -455,5 +456,4 @@ public class ProductDAO { //from
             con.close();
         }
     }
-
 }
